@@ -83,7 +83,7 @@ The training dynamics can be tracked via:
  <img src="./images/graph.jpg" alt="Drawing", width=60%>
 </p>
 
-# Differencies with the paper
+### Differencies with the paper
 
 Current project is not the exact implementation of the paper. I modified few things to implement stop_network.
 The list of differencies:
