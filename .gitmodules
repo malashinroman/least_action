@@ -1,0 +1,3 @@
+[submodule "script_manager"]
+	path = script_manager
+	url = https://github.com/malashinroman/script_manager

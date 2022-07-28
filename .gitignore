@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+data
+images
+.idea
+train_results
+*__pycache__*
+weak_classifiers
