@@ -12,11 +12,11 @@ Agent state is a table that stores responses of the classifiers.
 
 LAC consists of the following five **main components**:
 
-1. Environment response generator, a non-differentiable element that takes an image and the index of the requested classifier, and returns response of the classifier.
+1. Environment response generator (non-differentiable), input:  an image and the index of the requested classifier, returns response of the classifier.
 2. State refresher; at step _t_ it inputs hidden state vector and encoded classifier response; returns new hidden state vector.
-3. Action generator; it inputs hidden state vector and returns the “index” of the classifier.
-4. Decision maker that inputs hidden state vector and outputs current solution.
-5. Response-action encoder that encodes action and classifier response to the format that is appropriate for state refresher.
+3. Action generator; input: hidden state vector, returns the “index” of the classifier.
+4. Decision maker; inputs hidden state vector, returns current solution.
+5. Response-action encoder; encodes action and classifier response to the format that is appropriate for state refresher.
 
 <p align="center">
  <img src="./images/lac.jpg" alt="Drawing", width=60%>
@@ -38,9 +38,9 @@ LAC components was trained with the use of the following:
 ## Data
 
 LAC uses responses of 6 classifiers trained on cifar-10. Responses are precomputed stored as numpy files.
-Files can be downloaded from https://drive.google.com/drive/folders/1JYeRYBDanM6oLKLqHPrznJXaiSRkYtvg?usp=sharing
+Files can be downloaded from [google-drive](https://drive.google.com/file/d/14ysSLVz3UhnTRevKzLrQ1TDssYo0hESf/view?usp=sharing).
 
-Place the three folders into './weak_classifiers'.
+Untar and place the content into '<project-folder>/weak_classifiers'.
 
 ## Start training
 
@@ -59,7 +59,7 @@ It should reproduce experiments which comprises experiments with pool2 (table 3
 from the paper). Without `--not_test` script will run only 1 epoch (you can use to
 verify setup is ok).
 
-If you use weights and biases you can enable logs via adding --enable_wandb.
+If you use weights and biases you can enable logs via adding --enable_wandb (to activate specify your login in local_config.py).
 
 # Results
 

@@ -48,6 +48,7 @@ main_script = "main.py"
 for use_mask_state in [0, 1]:
     for num_glimpses in range(1, 5):
         config = {
+            "use_mask_state": use_mask_state,
             "num_glimpses": num_glimpses,
             "tag": f"pool2_use_mask_sate_{use_mask_state}",
             "cifar_classifier_indexes": "[0,2,3,5]",  # according to pool2 of the paper
