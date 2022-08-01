@@ -1,10 +1,8 @@
 # Least action classifier
 
-This is official implementation of "Sparsely Ensembled Convolutional Neural Network Classifiers Via Reinforcement Learning" (2021)
+This is the official implementation of ICMLT conference [paper](https://arxiv.org/pdf/2102.03921.pdf) "Sparsely Ensembled Convolutional Neural Network Classifiers Via Reinforcement Learning" (2021).
 
-https://arxiv.org/pdf/2102.03921.pdf
-
-# Description
+## Description
 
 Least action classifier (LAC) is an agent that percieves images through the pool of externally pretrained CNN classifiers. It's goal is minimizing average number of classifiers needed to recognize single image (in average).
 
@@ -27,22 +25,22 @@ LAC components was trained with the use of the following:
 2. Descision maker: cross-entropy loss (supervised).
 3. Action genreator: a2c loss (reinforcment)
 
-# Dependencies
+## Dependencies
 
 1. The project is build with the use of pytorch library.
 2. Computational graphs are plotted with graphviz.
-3. Experiments are managed through the use of script_manager https://github.com/malashinroman/script_manager. You don't need to install it seperately, but don't forget to do "git submodule init", and "git submodule update"
+3. Experiments are managed through the use of [script_manager](https://github.com/malashinroman/script_manager). You don't need to install it seperately, but don't forget to do "git submodule init", and "git submodule update"
 
-# Training
+## Training
 
-## Data
+### Data
 
 LAC uses responses of 6 classifiers trained on cifar-10. Responses are precomputed stored as numpy files.
 Files can be downloaded from [google-drive](https://drive.google.com/file/d/14ysSLVz3UhnTRevKzLrQ1TDssYo0hESf/view?usp=sharing).
 
 Untar and place the content into '<project-folder>/weak_classifiers'.
 
-## Start training
+### Start training
 
 You don't need gpu for training.
 
@@ -83,15 +81,16 @@ The training dynamics can be tracked via:
  <img src="./images/graph.jpg" alt="Drawing", width=60%>
 </p>
 
-### Differencies with the paper
+#### Differencies with the paper
 
 Current project is not the exact implementation of the paper. I modified few things to implement stop_network.
 The list of differencies:
 
-- early stopping on validation set
-- stop network for dynamic break of computations is implemented (not yet used, demonstration to be added later)
+- Early stopping on validation set.
+- Stop network for dynamic break of computations is implemented (not yet used, demonstration to be added later).
+- State without mask (use_mask_state=False).
 
-# Citing
+## Citing
 
 If you find this code useful to your research, please give credit to the following paper
 

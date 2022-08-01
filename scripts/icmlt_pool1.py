@@ -46,12 +46,12 @@ configs = []
 test_parameters = {"epochs": 3, "skip_validation": False}
 main_script = "main.py"
 
-for use_mask_state in [0, 1]:
-    for num_glimpses in range(1, 7):
+for use_mask_state in [0]:
+    for num_glimpses in range(2, 7):
         config = {
             "use_mask_state": use_mask_state,
             "num_glimpses": num_glimpses,
-            "tag": f"pool1_use_mask_sate_{use_mask_state}",
+            "tag": f"pool1_icmlt",
             "cifar_classifier_indexes": "[0,1,2,3,4,5]",  # according to pool2 of the paper
         }
         configs.append([config, None])

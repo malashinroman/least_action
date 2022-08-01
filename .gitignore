@@ -5,3 +5,5 @@ data
 train_results
 *__pycache__*
 weak_classifiers
+
+weak_classifiers.tar
