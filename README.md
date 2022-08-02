@@ -64,17 +64,26 @@ If you use weights and biases you can enable logs via adding --enable_wandb (to 
 The numbers can slighly differ from the paper due to random
 initialization and differencies (see the last section).
 
+##### Pool_1
+| Classifiers used | Test acc |
+| ---------------- | -------- |
+| 3                | 78.03    |
+| 4                | 78.48    |
+| 5                | 79       |
+
+
+##### Pool_2
 | Classifiers used | Test acc |
 | ---------------- | -------- |
 | 2                | 68.02    |
-| 3                | 71.5    |
-| 4                | 72.74    |
+| 3                | 71.5     |
+| 4                | 72.81    |
 
 The training dynamics can be tracked via:
 
 1. Output of the console.
-2. In ./tensorboard there are logs in tensorboard format
-3. After training program saves pdf with computational graph here train_results/date-time/(dataset=test set)visualized_policy_simple.dot.pdf
+2. Tensorboard logs in ./tensorboard.
+3. Computational graph is saved to train_results/date-time/(dataset=test set)visualized_policy_simple.dot.pdf.
 4. If you use weights and biases you can enable logs via adding `--enable_wandb`.
 
 <p align="center">
